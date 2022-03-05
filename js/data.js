@@ -1,6 +1,6 @@
 const list = [
     {
-        id: -1,
+        id: -2,
         name: "Nàng Thơ",
         album: "NT",
         artist: "Hoàng Dũng",
@@ -8,12 +8,20 @@ const list = [
         audio: "https://res.cloudinary.com/tratahuong01/video/upload/v1646407348/MP3-Data/yhhptvmhei3qi8xjx8lo.mp3",
     },
     {
-        id: 0,
+        id: -1,
         name: "THẰNG ĐIÊN",
         album: "TD",
         artist: "JUSTATEE x PHƯƠNG LY",
         image: "https://res.cloudinary.com/tratahuong01/image/upload/v1646360895/MP3-Data/l0b0hjndrn3npms2ncok.webp",
         audio: "https://res.cloudinary.com/tratahuong01/video/upload/v1646360903/MP3-Data/irhl7ktwbdpqrjoo0ig9.mp3",
+    },
+    {
+        id: 0,
+        name: "Cash Cash",
+        album: "CC",
+        artist: "Hero feat. Christina Perri",
+        image: "https://res.cloudinary.com/tratahuong01/image/upload/v1646522925/MP3-Data/ykcqv96opo8ojugfkjiy.webp",
+        audio: "https://res.cloudinary.com/tratahuong01/video/upload/v1646522927/MP3-Data/xauedu7m3h6etr5vs9gs.mp3",
     },
     {
         id: 1,
@@ -33,6 +41,14 @@ const list = [
     },
     {
         id: 3,
+        name: "Ngày Đầu Tiên (Lofi Ver.)",
+        album: "NDT",
+        artist: "Đức Phúc x Freak D",
+        image: "https://res.cloudinary.com/tratahuong01/image/upload/v1646522962/MP3-Data/entjbexqhwnogjg5dszi.webp",
+        audio: "https://res.cloudinary.com/tratahuong01/video/upload/v1646522973/MP3-Data/hg4xzifafty8n8qkxezp.mp3",
+    },
+    {
+        id: 4,
         name: "Đã Lỡ Yêu Em Nhiều",
         album: "DLYEN",
         artist: "JustaTee",
@@ -40,7 +56,7 @@ const list = [
         audio: "https://res.cloudinary.com/tratahuong01/video/upload/v1646360900/MP3-Data/qz7p38elsxm4nprktdme.mp3"
     },
     {
-        id: 4,
+        id: 5,
         name: "按下暂停你将变得",
         album: "按下暂停",
         artist: "清醒且墮落 Mei",
