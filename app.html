@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Mp3</title>
+
+    <!-- cdn -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- cdn -->
+
+    <!-- file -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- file -->
+
+</head>
+
+<body>
+
+    <!-- code -->
+    <div class="container">
+        <audio src="" id="song-main" volume="40" hidden></audio>
+        <div class="content">
+            <div class="image-demo">
+                <img src="./images/image.png" alt="" srcset="">
+            </div>
+            <div class="info-song" style="display: none;">
+                <img class="info-song__image" src="" />
+                <p class="info-song__name"></p>
+                <p class="info-song__main" style="margin-bottom: 20px;">
+                    <span>Album</span>
+                    <span>-</span>
+                    <span class="info-song__album"></span>
+                </p>
+                <p class="info-song__main">
+                    <span>Artist</span>
+                    <span>-</span>
+                    <span class="info-song__artist"></span>
+                </p>
+            </div>
+            <div class="control">
+                <div class="control-time">
+                    <span class="control-time__number__left control-time__number">
+                        ...
+                    </span>
+                    <div class="control-time__main">
+                        <div class="control-time__current">
+                            <div style="position: relative;">
+                                <div class="control-time__dot">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="control-time__number__right control-time__number">
+                        ...
+                    </span>
+                </div>
+                <div class="control-audio">
+                    <div class="control-audio__wrapper">
+                        <button class="button-control shadow-button control-audio__prev" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="15px" height="15px">
+                                <path fill-rule="evenodd" fill="rgb(83, 88, 97)"
+                                    d="M4.455,6.967 L12.943,1.458 C13.570,1.033 14.083,1.346 14.083,2.153 L14.083,12.847 C14.083,13.654 13.570,13.967 12.943,13.542 L4.455,8.033 C4.455,8.033 4.149,7.811 4.149,7.500 C4.149,7.189 4.455,6.967 4.455,6.967 ZM1.833,0.503 C2.869,0.503 3.583,0.832 3.583,1.902 L3.583,13.098 C3.583,14.168 2.869,14.497 1.833,14.497 C0.797,14.497 0.083,14.168 0.083,13.098 L0.083,1.902 C0.083,0.832 0.797,0.503 1.833,0.503 Z" />
+                            </svg>
+                        </button>
+                        <button class="button-center disbaled-button shadow-button control-audio__center" disabled>
+                            <i class='bx bx-play' style="transform: scale(3.5);margin-left: 5px;"></i>
+                        </button>
+                        <button class="button-control shadow-button control-audio__next" disabled>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="15px" height="15px">
+                                <path fill-rule="evenodd" fill="rgb(83, 88, 97)"
+                                    d="M10.545,6.967 L2.057,1.458 C1.430,1.033 0.917,1.346 0.917,2.153 L0.917,12.847 C0.917,13.654 1.430,13.967 2.057,13.542 L10.545,8.033 C10.545,8.033 10.851,7.811 10.851,7.500 C10.851,7.189 10.545,6.967 10.545,6.967 ZM13.167,0.503 C12.131,0.503 11.417,0.832 11.417,1.902 L11.417,13.098 C11.417,14.168 12.131,14.497 13.167,14.497 C14.203,14.497 14.917,14.168 14.917,13.098 L14.917,1.902 C14.917,0.832 14.203,0.503 13.167,0.503 Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <i class="bx bx-reset repeat-audio"></i>
+                    <div class="volume-wrapper">
+                        <!-- <div class="volume-main">
+                            <div class="volume-current">
+                                <div class="volume-current__wrapper">
+                                    <div class="volume-current__dot">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <input type="range" class="volume-range" max="100" min="0" style="display: block;" />
+                    </div>
+                </div>
+            </div>
+            <div class="list-audio">
+
+            </div>
+        </div>
+    </div>
+    <!-- code -->
+
+    <!-- script -->
+
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+    <!-- script -->
+
+</body>
+
+</html>
