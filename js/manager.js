@@ -321,7 +321,7 @@ modalContent.addEventListener('submit', (e) => {
             const dataAll = Promise.all([fetch1, fetch2]);
             dataAll.then(res => {
                 object = { ...object, image: res[0].url, audio: res[1].url }
-                fetch('${API_URL}/musics', {
+                fetch(`${API_URL}/musics`, {
                     headers: { "Content-Type": "application/json" },
                     method: idForm.value ? 'PUT' : 'POST',
                     body: JSON.stringify(object)
@@ -355,7 +355,7 @@ modalContent.addEventListener('submit', (e) => {
                 }).then(res => res.json()))
             }
             if (inputUploadAudio.files.length === 0 && inputUploadImage.files.length === 0) {
-                fetch('${API_URL}/musics', {
+                fetch(`${API_URL}/musics`, {
                     headers: { "Content-Type": "application/json" },
                     method: idForm.value ? 'PUT' : 'POST',
                     body: JSON.stringify(object)
@@ -367,7 +367,7 @@ modalContent.addEventListener('submit', (e) => {
                 if (promiseList.length === 2) {
                     const promiseAll = Promise.all(promiseList);
                     promiseAll.then(res => {
-                        fetch('${API_URL}/musics', {
+                        fetch(`${API_URL}/musics`, {
                             headers: { "Content-Type": "application/json" },
                             method: idForm.value ? 'PUT' : 'POST',
                             body: JSON.stringify({ ...object, image: res[0].url, audio: res[1].url })
@@ -379,7 +379,7 @@ modalContent.addEventListener('submit', (e) => {
                 else {
                     const promiseAll = Promise.all(promiseList);
                     promiseAll.then(res => {
-                        fetch('${API_URL}/musics', {
+                        fetch(`${API_URL}/musics`, {
                             headers: { "Content-Type": "application/json" },
                             method: idForm.value ? 'PUT' : 'POST',
                             body: JSON.stringify({
@@ -416,7 +416,7 @@ modalContent.addEventListener('submit', (e) => {
 })
 
 const fetchMusic = () => {
-    fetch('${API_URL}/musics', {
+    fetch(`${API_URL}/musics`, {
         headers: { "Content-Type": "application/json" },
         method: id.value ? 'PUT' : 'POST',
         body: JSON.stringify({
