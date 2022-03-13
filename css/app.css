@@ -1,5 +1,5 @@
 :root {
-    --background-color-container : #ffde90;
+    --background-color-container : #ecc15d;
     --background-color-button : #f47c52;    
     --background-color-content : white;
     --color-main : #535861;
@@ -17,13 +17,37 @@
     background-color: var(--background-color-container);
 }
 
+.music-manager {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    color: red;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 .content {
     padding-top: 35px;
+    position: relative;
     border-radius: 6px;
     max-width: 935px;
     width: 935px;
     margin: auto;
     background-color: var(--background-color-content);
+}
+
+.content-search-song {
+    width: 220px;
+    position: absolute;
+    z-index: 10;
+    border: 2px solid var(--background-color-container);
+    top: 32px;
+    left: 32px;
+    padding: 10px;
+    border-radius: 100em;
 }
 
 .image-demo {
@@ -159,9 +183,11 @@
 }
 
 .list-audio {
+    min-height: 276px;
     flex: 1;
     overflow: auto;
     scroll-behavior: smooth;
+    border-top: 1px solid #ccc;
 }
 
 .list-audio__item {

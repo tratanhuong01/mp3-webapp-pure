@@ -1,4 +1,7 @@
 @media screen and (min-width : 200px) {
+    .content-search-song {
+        width: 150px;
+    }
     .content {
         width: 100%;
         background-color: #e8f0dd;
@@ -43,6 +46,9 @@
 }
 
 @media screen and (min-width : 768px) {
+    .content-search-song {
+        width: 220px;
+    }
     .list-audio__item {
         padding: 32px 53px;
     }

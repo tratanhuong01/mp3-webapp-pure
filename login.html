@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <!-- favicon -->
+
+    <!-- cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- cdn -->
+
+    <!-- file -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- file -->
+
+</head>
+
+<body>
+
+    <!-- code -->
+    <div class="container">
+        <audio src="" id="song-main" volume="40" hidden></audio>
+        <div class="content" style="width: 400px;">
+            <h1 style="text-align: center;padding: 12px;">Login Manager</h1>
+            <form action="" id="form-login" method="post" style="padding: 20px;">
+                <label for="">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter username..." spellcheck="false">
+                <p class="error-username"></p>
+                <label for="">Password</label>
+                <div class="panel-password">
+                    <input type="password" name="password" id="password" placeholder="Enter password."
+                        spellcheck="false">
+                    <i class='bx bx-hide hideOrShow'></i>
+                </div>
+                <p class="error-password"></p>
+                <button type="submit" id="button-submit-login">Login</button>
+            </form>
+        </div>
+        <!-- code -->
+
+        <!-- script -->
+        <script src="./js/env.js"></script>
+        <script src="./js/auth.js"></script>
+        <script src="./js/login.js"></script>
+        <!-- script -->
+
+</body>
+
+</html>

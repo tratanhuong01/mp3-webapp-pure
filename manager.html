@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <!-- favicon -->
+
+    <!-- cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- cdn -->
+
+    <!-- file -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/manager.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- file -->
+
+</head>
+
+<body>
+
+    <!-- code -->
+    <div class="container">
+        <audio src="" id="song-main" volume="40" hidden></audio>
+        <audio src="" id="song-modal" volume="40" hidden></audio>
+        <div class="content">
+            <div class="content-top">
+                <h2 style="text-align: center;flex: 1;">Manager Music</h2>
+                <div class="music-manager">
+                    <button class="button-add">Add music</button>
+                    <p></p>
+                </div>
+            </div>
+            <table class="table-main" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Image</th>
+                        <th>Audio</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="loading-audio">
+                        <td rowspan="6" style="border: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- code -->
+    </div>
+    <div id="modal">
+        <form id="modal-content">
+            <input type="text" style="display: none;" id="form-id">
+            <div class="modal-content-header">
+                <h2><span class="title-modal">Add</span> music</h2>
+                <span id="close-modal">&times;</span>
+            </div>
+            <div class="modal-content-main " id="form-music">
+                <div class="name-music">
+                    <label for="">Name music</label>
+                    <input type="text" placeholder="Enter name..." name="name-music" id="name-music">
+                    <p></p>
+                </div>
+                <div class="" style="display: flex;gap:10px;justify-content:space-between;">
+                    <div class="album-music" style="width: 50%;">
+                        <label for="">Album</label>
+                        <input type="text" placeholder="Enter album..." name="album" id="album-music">
+                        <p></p>
+                    </div>
+                    <div class="artist-music" style="width: 50%;">
+                        <label for="">Artist</label>
+                        <input type="text" placeholder="Enter artist..." name="artist" id="artist-music">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="" style="display: flex;gap:10px;justify-content:space-between;
+                    margin-top: 20px;">
+                    <div class="image-music" style="width: 50%;">
+                        <label for="image-music-input">
+                            <img src="https://media.istockphoto.com/vectors/thumbnail-image-vector-graphic-vector-id1147544807?k=20&m=1147544807&s=612x612&w=0&h=pBhz1dkwsCMq37Udtp9sfxbjaMl27JUapoyYpQm0anc="
+                                alt="" srcset="" class="image-display" id="image-music-change">
+                        </label>
+                        <input type="file" style="display: none;" name="file-image" id="image-music-input">
+                        <div class="footer-item" id="info-image-music">
+                            Select file
+                        </div>
+                        <p></p>
+                    </div>
+                    <div class="audio-music" style="width: 50%;">
+                        <label for="audio-music-input">
+                            <img src="data:image/jpeg;base64,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"
+                                alt="" srcset="" class="image-display" id="image-music">
+                        </label>
+                        <input type="file" style="display: none;" name="file-image" id="audio-music-input">
+                        <div class="footer-item" id="info-audio-music">
+                            Select file
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-content-footer">
+                <!-- <button type="reset">Reset</button> -->
+                <button type="submit">Save</button>
+            </div>
+            <div id="loading-modal">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+        </form>
+    </div>
+    <!-- script -->
+    <script src="./js/env.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/manager.js"></script>
+    <!-- script -->
+
+</body>
+
+</html>

@@ -12,11 +12,13 @@
     <!-- favicon -->
 
     <!-- cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <!-- cdn -->
 
     <!-- file -->
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <!-- file -->
@@ -29,6 +31,7 @@
     <div class="container">
         <audio src="" id="song-main" volume="40" hidden></audio>
         <div class="content">
+            <input type="text" placeholder="Search song..." class="content-search-song">
             <div class="image-demo">
                 <img src="./images/image.png" alt="" srcset="">
             </div>
@@ -99,15 +102,22 @@
                 </div>
             </div>
             <div class="list-audio">
+                <div class="loading-audio">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+            </div>
+            <div class="music-manager">
 
             </div>
         </div>
     </div>
+
     <!-- code -->
 
     <!-- script -->
-
-    <script src="./js/data.js"></script>
+    <script src="./js/env.js"></script>
+    <script src="./js/auth.js"></script>
+    <!-- <script src="./js/data.js"></script> -->
     <script src="./js/app.js"></script>
     <!-- script -->
 
