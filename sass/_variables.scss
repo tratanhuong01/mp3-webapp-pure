@@ -1,0 +1,11 @@
+$color: #dc7027;
+$font-family: "Lato", sans-serif;
+$color-white: #ffffff;
+$color-black: #000000d0;
+
+:root {
+    --color: #{$color};
+    --font-family: #{$font-family};
+    --color-white: #{$color-white};
+    --color-black: #{$color-black};
+}

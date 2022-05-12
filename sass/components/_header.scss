@@ -1,0 +1,68 @@
+.header {
+    padding: 1.6rem 0rem;
+    @include flexJustifyAlign(space-between, center);
+    &__mobile {
+        display: none;
+        @include max-lg {
+            display: block;
+        }
+        font-size: 3.2rem;
+        padding-right: 5rem;
+        cursor: pointer;
+        color: var(--color);
+    }
+    &__search {
+        @include flexJustifyAlign(flex-start, center);
+        flex: 1;
+        gap: 1rem;
+        i {
+            font-size: 1.8rem;
+        }
+        input {
+            flex: 1;
+        }
+        color: gray;
+    }
+    &__right {
+        @include min-lg {
+            margin-right: -2rem;
+        }
+        @include flexJustifyAlign(flex-start, center);
+        gap: 3rem;
+        & > li {
+            &:hover {
+                color: var(--color);
+            }
+            cursor: pointer;
+            font-size: 2rem;
+            position: relative;
+            & > span {
+                width: 0.6rem;
+                height: 0.6rem;
+                border-radius: 100rem;
+                background-color: red;
+                position: absolute;
+                top: -0.3rem;
+                right: -0.3rem;
+            }
+            &:last-child {
+                display: none;
+                @include min-md {
+                    @include flexJustifyAlign(center, center);
+                }
+                background-color: var(--color);
+                color: var(--color-white);
+                font-size: 1.6rem;
+                line-height: 1.6rem;
+                padding: 0.8rem 2rem;
+                border: 0.1rem solid var(--color);
+                border-radius: 100rem;
+                transition: all 1s;
+                &:hover {
+                    background-color: var(--color-white);
+                    color: var(--color);
+                }
+            }
+        }
+    }
+}
