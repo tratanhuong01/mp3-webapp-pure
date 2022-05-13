@@ -19,9 +19,26 @@ const constants = {
             list: document.querySelector('.popover__color ul')
         }
     },
-    URL_API: 'https://api-mp3-app.herokuapp.com',
+    URL_API: 'https://mp3-app-pure.herokuapp.com',
     numberSong: document.querySelector('.number-song'),
-    tbody: document.querySelector('.footer__left > div:nth-child(2) > table > tbody')
+    tbody: document.querySelector('.footer__left > div:nth-child(2) > table > tbody'),
+    audio: {
+        buttonLoopRandom: document.querySelector('.button-loop-random'),
+        buttonLeft: document.querySelector('.button-left'),
+        buttonPlay: document.querySelector('.button-play'),
+        buttonRight: document.querySelector('.button-right'),
+        buttonLoopIndex: document.querySelector('.button-loop-index'),
+        imageAudio: document.querySelector('.image-audio'),
+        artistAudio: document.querySelector('.artist-audio'),
+        nameAudio: document.querySelector('.name-audio'),
+        dot: document.querySelector('.audio__time--dot'),
+        current: document.querySelector('.audio__time--current'),
+        duration: document.querySelector('.audio__time--duration'),
+        main: document.querySelector('.audio__time'),
+    },
+    audioPlay: document.querySelector('#audio-play'),
+    container: document.querySelectorAll('.container'),
+    catelog: document.querySelectorAll('.sidebar__catelog--item')
 }
 
 export default constants;

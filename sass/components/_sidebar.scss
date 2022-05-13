@@ -92,7 +92,8 @@
             cursor: pointer;
             gap: 1.5rem;
             padding: 1rem 0rem;
-            &:hover {
+            &:hover,
+            &.active {
                 color: var(--color);
             }
             & > i {

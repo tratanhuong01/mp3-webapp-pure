@@ -86,7 +86,7 @@ button {
 .container {
   padding: 0rem 1.6rem;
   flex: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -94,6 +94,10 @@ button {
   .container {
     padding: 0rem 4rem;
   }
+}
+
+.container.active {
+  display: flex !important;
 }
 
 .content {
@@ -111,7 +115,11 @@ button {
 }
 
 .text-gray {
-  color: gray;
+  color: gray !important;
+}
+
+.text-main {
+  color: var(--color) !important;
 }
 
 .hidden {
@@ -457,7 +465,7 @@ button {
   font-weight: 600;
 }
 
-.sidebar__catelog--item:hover {
+.sidebar__catelog--item:hover, .sidebar__catelog--item.active {
   color: var(--color);
 }
 
@@ -618,6 +626,7 @@ button {
 @media all and (min-width: 1024px) {
   .footer__left {
     width: 66%;
+    padding-right: 3rem;
   }
 }
 
@@ -654,6 +663,7 @@ button {
 }
 
 .footer__left > div:nth-child(2) > table tr {
+  margin-bottom: 0.8rem;
   width: 100%;
   cursor: pointer;
   display: flex;
@@ -674,7 +684,7 @@ button {
   flex: 1;
 }
 
-.footer__left > div:nth-child(2) > table tr:hover {
+.footer__left > div:nth-child(2) > table tr:hover, .footer__left > div:nth-child(2) > table tr.active {
   background-color: rgba(128, 128, 128, 0.2);
 }
 
@@ -725,7 +735,7 @@ button {
 }
 
 .footer__right--main {
-  padding-top: 5rem;
+  padding-top: 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -761,9 +771,10 @@ button {
 }
 
 .audio__time {
+  cursor: pointer;
   color: gray;
   width: 75%;
-  margin: 2rem auto;
+  margin: 2rem auto 1rem auto;
   position: relative;
   height: 0.5rem;
   background-color: rgba(128, 128, 128, 0.4);
@@ -796,6 +807,7 @@ button {
 
 .audio__time--duration {
   font-size: 1.4rem;
+  cursor: pointer;
 }
 
 .audio__time--current {
@@ -803,10 +815,11 @@ button {
 }
 
 .audio__time--wrapper {
+  width: 75%;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0rem;
 }
 
 .control {

@@ -26,6 +26,7 @@
 <body>
 
     <div id="main" class="sidebar__wrapper">
+        <audio src="" id="audio-play" hidden></audio>
         <div class="sidebar">
             <div class="sidebar__top">
                 <div>
@@ -39,7 +40,7 @@
             <div class="sidebar__catelog">
                 <ul>
                     <li class="sidebar__catelog--title">CATELOG</li>
-                    <li class="sidebar__catelog--item">
+                    <li class="sidebar__catelog--item active" data-path="">
                         <i class="bx bx-home"></i>
                         <span>Home</span>
                     </li>
@@ -109,7 +110,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="container">
+            <div class="container" data-path="">
                 <div class="">
                     <div class="box__container">
                         <div class="box__title">
@@ -143,7 +144,7 @@
                                 <span class="number-song">92 Songs</span>
                             </p>
                         </div>
-                        <div>
+                        <div class="list-music">
                             <table>
                                 <tr>
                                     <td class="text-gray">1</td>
@@ -173,33 +174,34 @@
                         </div>
                         <div class="footer__right--main">
                             <div class="audio__top">
-                                <img src="https://media.2dep.vn/resize_560x699/upload/thutra/2022/04/28/tu-a-den-z-ve-theres-no-one-at-all-cua-son-tung-m-tp-loi-bai-hat-va-cau-chuyen-trong-mv-1651160431-4.jpeg"
+                                <img class="image-audio"
+                                    src="https://media.2dep.vn/resize_560x699/upload/thutra/2022/04/28/tu-a-den-z-ve-theres-no-one-at-all-cua-son-tung-m-tp-loi-bai-hat-va-cau-chuyen-trong-mv-1651160431-4.jpeg"
                                     alt="" srcset="">
-                                <p>There's no one at all</p>
-                                <p>SonTung MTP</p>
+                                <p class="name-audio">There's no one at all</p>
+                                <p class="artist-audio">SonTung MTP</p>
                             </div>
                             <div class="audio__time">
                                 <div class="audio__time--dot" style="left: 25%"></div>
-                                <div class="audio__time--wrapper">
-                                    <span class="audio__time--current">01:00</span>
-                                    <span class="audio__time--duration">-04:00</span>
-                                </div>
+                            </div>
+                            <div class="audio__time--wrapper">
+                                <span class="audio__time--current">01:00</span>
+                                <span class="audio__time--duration">-04:00</span>
                             </div>
                             <div class="control">
                                 <ul>
-                                    <li>
+                                    <li class="button-loop-random">
                                         <i class='bx bx-shuffle'></i>
                                     </li>
-                                    <li>
+                                    <li class="button-left">
                                         <i class='bx bx-rewind'></i>
                                     </li>
-                                    <li class="active">
-                                        <i class='bx bx-pause'></i>
+                                    <li class="active button-play play">
+                                        <i class='bx bx-play'></i>
                                     </li>
-                                    <li>
+                                    <li class="button-right">
                                         <i class='bx bx-fast-forward'></i>
                                     </li>
-                                    <li>
+                                    <li class="button-loop-index">
                                         <i class='bx bx-sync'></i>
                                     </li>
                                 </ul>
@@ -207,6 +209,24 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="container" data-path="album">
+                Album
+            </div>
+            <div class="container" data-path="wishlist">
+                Wishlist
+            </div>
+            <div class="container" data-path="artist">
+                Artist
+            </div>
+            <div class="container" data-path="videos">
+                Videos
+            </div>
+            <div class="container" data-path="currently">
+                Currently Played
+            </div>
+            <div class="container" data-path="localy">
+                Localy
             </div>
         </div>
     </div>

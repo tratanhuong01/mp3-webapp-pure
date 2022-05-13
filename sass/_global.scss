@@ -40,8 +40,12 @@
         padding: 0rem 4rem;
     }
     flex: 1;
-    display: flex;
+    display: none;
     flex-direction: column;
+}
+
+.container.active {
+    display: flex !important;
 }
 
 .content {
@@ -56,7 +60,11 @@
 }
 
 .text-gray {
-    color: gray;
+    color: gray !important;
+}
+
+.text-main {
+    color: var(--color) !important;
 }
 
 .hidden {
