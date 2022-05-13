@@ -1,6 +1,12 @@
+import api from "./api.js";
 import constants from "./constants.js";
 
 window.onload = () => {
+
+    // api
+    api();
+    // api
+
     // sidebar
     if (constants.sidebar) {
         (() => {
@@ -28,7 +34,7 @@ window.onload = () => {
 
     // resize
     const resize = function () {
-        if (window.innerWidth < 1024 && constants.sidebar && constants.sidebar.main) {
+        if (window.innerWidth < 1280 && constants.sidebar && constants.sidebar.main) {
             constants.sidebar.main.classList.add('transition');
         }
         else {
@@ -53,28 +59,26 @@ window.onload = () => {
                     }
                 });
                 const addEventClickBox = (btn) => {
-                    btn && btn.addEventListener('click', function () {
+                    btn && btn.addEventListener('click', async function () {
                         const width = window.innerWidth;
-                        const step = width >= 1500 ? 5 : (width < 1500 && width >= 1280) ? 4 : (width < 1280 && width >= 640) ? 3 :
-                            (width >= 450 && width < 640) ? 2 : 1;
+                        const step = constants.box.step(width);
                         const length = wrapper.children.length;
-                        const lengthCurrent = length - (current * step);
-                        current = lengthCurrent <= step ? lengthCurrent === 0 ? (current + step) : -1 : (current + step);
-                        currentStatus = lengthCurrent <= step ? true : false;
-                        current = current === -1 ? 0 : current;
-                        if (current !== 0) {
-                            wrapper.style.transform = `translateX(-${(100 / step) * (current)}%)`;
+                        let lengthCurrent = length - ((current === 0 ? 1 : current) * step);
+                        current = lengthCurrent <= step ? lengthCurrent === 0 ? (current + step) : (current + lengthCurrent) : (current + step);
+                        if (!currentStatus) {
+                            wrapper.style.transform = `translateX(-${(100 / step) * (current < 0 ? 0 : current)}%)`;
                             wrapper.classList.add('transition');
                         }
                         else {
-                            wrapper.style.transform = `translateX(${-(100 / step) * 2}%)`;
-                            wrapper.classList.add('transition');
+                            wrapper.style.transform = `translateX(${-(100 / step)}%)`;
                             const timeOutEndTransition = setTimeout(() => {
+                                wrapper.classList.add('transition');
                                 wrapper.style.transform = `translateX(${(0)}%)`;
                                 clearTimeout(timeOutEndTransition);
-                            }, 600);
+                            }, 0);
                         }
-
+                        current = current < 0 || lengthCurrent < 0 ? 0 : current;
+                        currentStatus = (lengthCurrent >= 0 && lengthCurrent <= step) ? true : false;
                     });
                 }
                 addEventClickBox(left);
@@ -83,5 +87,42 @@ window.onload = () => {
         })();
     }
     // box
+
+    // window click 
+    window.addEventListener('click', function (event) {
+        if (event.target.closest('.popover__color') || (event.target.closest('.button-change-color') || (
+            constants.popover.color.button && !constants.popover.color.button.classList.contains('active')
+        ))) {
+            return;
+        }
+        else {
+            constants.popover.color.button && constants.popover.color.button.classList.remove('active')
+        }
+    });
+    // window click 
+
+    // change color website
+    if (constants.popover.color) {
+        (() => {
+            const { button, list } = constants.popover.color;
+            if (button && list) {
+                button.addEventListener('click', function (event) {
+                    if (!event.target.closest(`.${list.parentElement.className}`)) {
+                        button.classList.contains('active') ? button.classList.remove('active') :
+                            button.classList.add('active');
+                    }
+                });
+                [...list.children].forEach(item => {
+                    item.addEventListener('click', () => {
+                        [...list.children].forEach(item => item.classList.remove('active'));
+                        const root = document.querySelector(':root');
+                        root.style.setProperty('--color', item.getAttribute('data-color'));
+                        item.classList.add('active');
+                    })
+                });
+            }
+        })();
+    }
+    // change color website
 
 }

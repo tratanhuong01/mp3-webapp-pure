@@ -1,6 +1,6 @@
 .sidebar {
     background-color: var(--color-white);
-    @include max-lg {
+    @include max-xl {
         position: fixed;
         z-index: 11;
         top: 0;
@@ -14,7 +14,7 @@
     &.transition {
         transition: all 0.6s;
     }
-    @include max-lg {
+    @include max-xl {
         &__overlay.active {
             visibility: visible !important;
             z-index: 10 !important;
@@ -34,8 +34,8 @@
         background-color: rgba(0, 0, 0, 0.8);
     }
     padding: 2rem 5rem;
-    @include min-lg {
-        width: 40rem;
+    @include min-xl {
+        width: max-content;
     }
     &__top {
         text-align: center;

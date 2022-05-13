@@ -4,6 +4,17 @@
         font-size: 2rem;
         font-weight: 600;
         padding: 2rem 0rem;
+        & > p {
+            & > span {
+                display: block;
+                line-height: 2.4rem;
+                &:nth-child(2) {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    color: gray;
+                }
+            }
+        }
     }
     &__button {
         &--container {
@@ -30,7 +41,7 @@
     &__wrapper {
         transform: translateX(0);
         display: flex;
-        margin: 0rem -1.6rem;
+        margin: 0rem -2rem;
         &.transition {
             transition: transform 0.5s;
         }
@@ -43,18 +54,18 @@
         @include min-sm {
             width: calc(100% / 3);
         }
-        @include min-xl {
+        @include min-md {
             width: 25%;
         }
         @include min-ss(1500px) {
-            width: 20%;
+            width: calc(100% / 6);
         }
-        padding: 0rem 1.6rem;
+        padding: 0rem 2rem;
         flex-shrink: 0;
         cursor: pointer;
         &--image {
             box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-            padding-top: 110%;
+            padding-top: 100%;
             border-radius: 1.2rem;
             overflow: hidden;
             img {

@@ -1,13 +1,27 @@
 .header {
-    padding: 1.6rem 0rem;
+    padding: 1.6rem;
+    @include min-lg {
+        padding: 1.6rem 4rem;
+    }
+    background-color: var(--color-white);
     @include flexJustifyAlign(space-between, center);
+    @include max-xl {
+        position: sticky;
+        z-index: 4;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        top: 0;
+        left: 0;
+    }
     &__mobile {
         display: none;
-        @include max-lg {
+        @include max-xl {
             display: block;
         }
         font-size: 3.2rem;
-        padding-right: 5rem;
+        padding-right: 1.6rem;
+        @include min-lg {
+            padding-right: 5rem;
+        }
         cursor: pointer;
         color: var(--color);
     }
@@ -65,4 +79,77 @@
             }
         }
     }
+}
+
+.popover {
+    &__color {
+        display: none;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+            rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        padding: 1rem;
+        border-radius: 0.8rem;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        @include min-md {
+            left: -10rem;
+        }
+        width: 20rem;
+        margin-top: 2rem;
+        background-color: var(--color-white);
+        & > ul {
+            gap: 1em;
+            @include flexJustifyAlign(flex-start, center);
+            flex-wrap: wrap;
+            & > li {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 100rem;
+                cursor: pointer;
+                transform: scale(0.7);
+                transition: all 0.4s;
+                &.default {
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    @include flexJustifyAlign(center, center);
+                    color: var(--color-black);
+                    font-weight: bold;
+                }
+                &.active {
+                    transform: scale(1);
+                }
+                &.red {
+                    background-color: red;
+                }
+                &.green {
+                    background-color: green;
+                }
+                &.brown {
+                    background-color: brown;
+                }
+                &.pink {
+                    background-color: pink;
+                }
+                &.blue {
+                    background-color: blue;
+                }
+                &.yellow {
+                    background-color: yellow;
+                }
+                &.black {
+                    background-color: black;
+                }
+                &.aquamarine {
+                    background-color: aquamarine;
+                }
+                &.blueviolet {
+                    background-color: blueviolet;
+                }
+            }
+        }
+    }
+}
+
+.button-change-color.active .popover__color {
+    display: block;
 }
