@@ -363,7 +363,7 @@ const sidebarEvent = () => {
                 constants.container.classList.remove('active');
                 timeOut = setTimeout(async () => {
                     clearTimeout(timeOut);
-                    await fetch(`../components/${data === "" ? 'home' : data}.html`)
+                    await fetch(`${window.location.host}/mp3-webapp-pure/components/${data === "" ? 'home' : data}.html`)
                         .then(res => res.text())
                         .then(res => {
                             constants.container.innerHTML = res;
