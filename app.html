@@ -27,206 +27,18 @@
 
     <div id="main" class="sidebar__wrapper">
         <audio src="" id="audio-play" hidden></audio>
-        <div class="sidebar">
-            <div class="sidebar__top">
-                <div>
-                    <img src="https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/275563245_3129398574009988_1167889920477274486_n.jpg?_nc_cat=110&ccb=1-6&_nc_sid=09cbfe&_nc_ohc=aFD02q2ETdEAX_czFz5&_nc_ht=scontent.fdad3-1.fna&oh=00_AT-AJzPtHILe-lPLPLh8a3XmMJvxc0IXJDKretcYyR-C1g&oe=62816211"
-                        alt="" srcset="">
-                    <span>NEW!</span>
-                </div>
-                <p>TraTanHuong</p>
-                <span>huongdev@gmail.com</span>
-            </div>
-            <div class="sidebar__catelog">
-                <ul>
-                    <li class="sidebar__catelog--title">CATELOG</li>
-                    <li class="sidebar__catelog--item active" data-path="">
-                        <i class="bx bx-home"></i>
-                        <span>Home</span>
-                    </li>
-                    <li class="sidebar__catelog--item">
-                        <i class="bx bx-album"></i>
-                        <span>Album</span>
-                    </li>
-                    <li class="sidebar__catelog--item">
-                        <i class="bx bx-heart"></i>
-                        <span>WishList</span>
-                    </li>
-                    <li class="sidebar__catelog--item">
-                        <i class='bx bx-user-voice'></i>
-                        <span>Artist</span>
-                    </li>
-                    <li class="sidebar__catelog--item">
-                        <i class="bx bx-video"></i>
-                        <span>Videos</span>
-                    </li>
-                    <li class="sidebar__catelog--title">MY MUSIC</li>
-                    <li class="sidebar__catelog--item">
-                        <i class='bx bxs-playlist'></i>
-                        <span>Currently Played</span>
-                    </li>
-                    <li class="sidebar__catelog--item">
-                        <i class='bx bx-folder-open'></i>
-                        <span>Localy</span>
-                    </li>
-                </ul>
-            </div>
+        <div class="sidebar" w3-include-html="./components/sidebar.html">
         </div>
         <div class="sidebar__overlay"></div>
         <div class="content">
-            <div class="header">
-                <div class="header__mobile">
-                    <i class="bx bx-menu"></i>
-                </div>
-                <div class="header__search">
-                    <i class="bx bx-search"></i>
-                    <input type="text" placeholder="Search name music, artist,...">
-                </div>
-                <ul class="header__right">
-                    <li>
-                        <i class='bx bx-bell'></i>
-                        <span></span>
-                    </li>
-                    <li class="button-change-color">
-                        <i class='bx bx-slider-alt'></i>
-                        <span></span>
-                        <div class="popover__color">
-                            <ul>
-                                <li class="default bx bx-x active" data-color="#dc7027"></li>
-                                <li class="red" data-color="red"></li>
-                                <li class="brown" data-color="brown"></li>
-                                <li class="pink" data-color="pink"></li>
-                                <li class="green" data-color="green"></li>
-                                <li class="blue" data-color="blue"></li>
-                                <li class="yellow" data-color="yellow"></li>
-                                <li class="blueviolet" data-color="blueviolet"></li>
-                                <li class="aquamarine" data-color="aquamarine"></li>
-                                <li class="black" data-color="black"></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        Upgrate Plan
-                    </li>
-                </ul>
+            <div class="header" w3-include-html="./components/header.html">
+
             </div>
-            <div class="container" data-path="">
-                <div class="">
-                    <div class="box__container">
-                        <div class="box__title">
-                            <p>TOP ARTIST</p>
-                            <ul class="box__button--container">
-                                <li class="bx bx-chevron-left box__button box__button--left"></li>
-                                <li class="bx bx-chevron-right box__button box__button--right"></li>
-                            </ul>
-                        </div>
-                        <div class="box__wrapper transition">
-                            <div class="box__item hidden-space">
-                                <div class="box__item--image img-wrap">
-                                    <img src="https://media.2dep.vn/resize_560x699/upload/thutra/2022/04/28/tu-a-den-z-ve-theres-no-one-at-all-cua-son-tung-m-tp-loi-bai-hat-va-cau-chuyen-trong-mv-1651160431-4.jpeg"
-                                        alt="">
-                                </div>
-                                <p class="box__item--title">
-                                    There's no one at all
-                                </p>
-                                <p class="box__item--desc">
-                                    SonTung MTP
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer">
-                    <div class="footer__left">
-                        <div class="box__title">
-                            <p>
-                                <span>TOP SONGS</span>
-                                <span class="number-song">92 Songs</span>
-                            </p>
-                        </div>
-                        <div class="list-music">
-                            <table>
-                                <tr>
-                                    <td class="text-gray">1</td>
-                                    <td>
-                                        <div class="footer__left--item">
-                                            <img src="https://media.2dep.vn/resize_560x699/upload/thutra/2022/04/28/tu-a-den-z-ve-theres-no-one-at-all-cua-son-tung-m-tp-loi-bai-hat-va-cau-chuyen-trong-mv-1651160431-4.jpeg"
-                                                alt="" srcset="">
-                                            <i class="bx bx-play"></i>
-                                            <div>
-                                                <p>There's no one at all</p>
-                                                <span>SonTung MTP</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>03:02</td>
-                                    <td><i class="bx bxs-heart text-gray"></i></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="footer__right">
-                        <div class="box__title">
-                            <p>
-                                <span>NOW PLAYING</span>
-                                <span>55 items on the list</span>
-                            </p>
-                        </div>
-                        <div class="footer__right--main">
-                            <div class="audio__top">
-                                <img class="image-audio"
-                                    src="https://media.2dep.vn/resize_560x699/upload/thutra/2022/04/28/tu-a-den-z-ve-theres-no-one-at-all-cua-son-tung-m-tp-loi-bai-hat-va-cau-chuyen-trong-mv-1651160431-4.jpeg"
-                                    alt="" srcset="">
-                                <p class="name-audio">There's no one at all</p>
-                                <p class="artist-audio">SonTung MTP</p>
-                            </div>
-                            <div class="audio__time">
-                                <div class="audio__time--dot" style="left: 25%"></div>
-                            </div>
-                            <div class="audio__time--wrapper">
-                                <span class="audio__time--current">01:00</span>
-                                <span class="audio__time--duration">-04:00</span>
-                            </div>
-                            <div class="control">
-                                <ul>
-                                    <li class="button-loop-random">
-                                        <i class='bx bx-shuffle'></i>
-                                    </li>
-                                    <li class="button-left">
-                                        <i class='bx bx-rewind'></i>
-                                    </li>
-                                    <li class="active button-play play">
-                                        <i class='bx bx-play'></i>
-                                    </li>
-                                    <li class="button-right">
-                                        <i class='bx bx-fast-forward'></i>
-                                    </li>
-                                    <li class="button-loop-index">
-                                        <i class='bx bx-sync'></i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="container">
+
             </div>
-            <div class="container" data-path="album">
-                Album
-            </div>
-            <div class="container" data-path="wishlist">
-                Wishlist
-            </div>
-            <div class="container" data-path="artist">
-                Artist
-            </div>
-            <div class="container" data-path="videos">
-                Videos
-            </div>
-            <div class="container" data-path="currently">
-                Currently Played
-            </div>
-            <div class="container" data-path="localy">
-                Localy
+            <div class="loading-content">
+                <i class='bx bx-loader-circle'></i>
             </div>
         </div>
     </div>
@@ -234,8 +46,39 @@
     <!-- -->
     <!-- -->
 
-    <script type="module" src="./js/api.js"></script>
-    <script type="module" src="./js/app.js"></script>
+    <script>
+        const includeHTML = () => {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+        includeHTML();
+    </script>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/app.js"></script>
 
 </body>
 

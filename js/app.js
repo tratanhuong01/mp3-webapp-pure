@@ -1,10 +1,10 @@
-import api from "./api.js";
-import constants from "./constants.js";
-
 window.onload = () => {
 
-    // api
-    api();
+    reset();
+
+    console.log(constants);
+
+    sidebarEvent();
     // api
 
     // sidebar
@@ -34,6 +34,7 @@ window.onload = () => {
 
     // resize
     const resize = function () {
+        reset();
         if (window.innerWidth < 1280 && constants.sidebar && constants.sidebar.main) {
             constants.sidebar.main.classList.add('transition');
         }
@@ -44,49 +45,6 @@ window.onload = () => {
     resize();
     window.addEventListener('resize', resize);
     // resize
-
-    // box 
-    if (constants.box) {
-        (() => {
-            let current = 0;
-            let currentStatus;
-            const { wrapper, button } = constants.box;
-            if (wrapper && button) {
-                const { left, right } = constants.box.button;
-                wrapper.addEventListener('transitionend', () => {
-                    if (currentStatus) {
-                        wrapper.classList.remove('transition');
-                    }
-                });
-                const addEventClickBox = (btn) => {
-                    btn && btn.addEventListener('click', async function () {
-                        const width = window.innerWidth;
-                        const step = constants.box.step(width);
-                        const length = wrapper.children.length;
-                        let lengthCurrent = length - ((current === 0 ? 1 : current) * step);
-                        current = lengthCurrent <= step ? lengthCurrent === 0 ? (current + step) : (current + lengthCurrent) : (current + step);
-                        if (!currentStatus) {
-                            wrapper.style.transform = `translateX(-${(100 / step) * (current < 0 ? 0 : current)}%)`;
-                            wrapper.classList.add('transition');
-                        }
-                        else {
-                            wrapper.style.transform = `translateX(${-(100 / step)}%)`;
-                            const timeOutEndTransition = setTimeout(() => {
-                                wrapper.classList.add('transition');
-                                wrapper.style.transform = `translateX(${(0)}%)`;
-                                clearTimeout(timeOutEndTransition);
-                            }, 0);
-                        }
-                        current = current < 0 || lengthCurrent < 0 ? 0 : current;
-                        currentStatus = (lengthCurrent >= 0 && lengthCurrent <= step) ? true : false;
-                    });
-                }
-                addEventClickBox(left);
-                addEventClickBox(right);
-            }
-        })();
-    }
-    // box
 
     // window click 
     window.addEventListener('click', function (event) {
