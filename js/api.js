@@ -381,10 +381,9 @@ const sidebarEvent = () => {
             constants.container.classList.remove('active');
             [...constants.catelog].forEach(el_ => el_.classList.remove('active'));
             const index_ = [...constants.catelog].findIndex(dt => dt.getAttribute("data-path") === href);
-            console.log(index_);
             index_ !== -1 && constants.catelog[index_].classList.add('active');
             clearTimeout(timeOut);
-            await fetch(`components/${href === "" ? 'home' : href}.html`)
+            await fetch(`https://${window.location.host}/mp3-webapp-pure/components/${href === "" ? 'home' : href}.html`)
                 .then(res => res.text())
                 .then(res => {
                     constants.container.innerHTML = res;

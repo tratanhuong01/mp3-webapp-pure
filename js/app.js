@@ -2,8 +2,6 @@ window.onload = () => {
 
     reset();
 
-    console.log(constants);
-
     sidebarEvent();
     // api
 
