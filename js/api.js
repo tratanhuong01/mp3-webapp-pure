@@ -384,7 +384,7 @@ const sidebarEvent = () => {
             console.log(index_);
             index_ !== -1 && constants.catelog[index_].classList.add('active');
             clearTimeout(timeOut);
-            await fetch(`mp3-webapp-pure/components/${data === "" ? 'home' : data}.html`)
+            await fetch(`mp3-webapp-pure/components/${href === "" ? 'home' : href}.html`)
                 .then(res => res.text())
                 .then(res => {
                     constants.container.innerHTML = res;
