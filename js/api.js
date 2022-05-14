@@ -363,7 +363,7 @@ const sidebarEvent = () => {
                 constants.container.classList.remove('active');
                 timeOut = setTimeout(async () => {
                     clearTimeout(timeOut);
-                    await fetch(`${window.location.host}/mp3-webapp-pure/components/${data === "" ? 'home' : data}.html`)
+                    await fetch(`mp3-webapp-pure/components/${data === "" ? 'home' : data}.html`)
                         .then(res => res.text())
                         .then(res => {
                             constants.container.innerHTML = res;
@@ -384,7 +384,7 @@ const sidebarEvent = () => {
             console.log(index_);
             index_ !== -1 && constants.catelog[index_].classList.add('active');
             clearTimeout(timeOut);
-            await fetch(`../components/${href === "" ? 'home' : href}.html`)
+            await fetch(`mp3-webapp-pure/components/${data === "" ? 'home' : data}.html`)
                 .then(res => res.text())
                 .then(res => {
                     constants.container.innerHTML = res;
