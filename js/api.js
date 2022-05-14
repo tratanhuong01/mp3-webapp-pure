@@ -377,12 +377,14 @@ const sidebarEvent = () => {
         });
         timeOut = setTimeout(async () => {
             let href = window.location.href;
-            href = (href.replace("http://", "").replace("https://", "").replace("/app.html", "").replace("#", "").replace(window.location.host, ""));
+            href = (href.replace("http://", "").replace("https://", "").replace("/app.html", "")
+                .replace("/mp3-webapp-pure", "").replace("#", "").replace(window.location.host, ""));
             constants.container.classList.remove('active');
             [...constants.catelog].forEach(el_ => el_.classList.remove('active'));
             const index_ = [...constants.catelog].findIndex(dt => dt.getAttribute("data-path") === href);
             index_ !== -1 && constants.catelog[index_].classList.add('active');
             clearTimeout(timeOut);
+            console.log(href);
             await fetch(`https://${window.location.host}/mp3-webapp-pure/components/${href === "" ? 'home' : href}.html`)
                 .then(res => res.text())
                 .then(res => {
