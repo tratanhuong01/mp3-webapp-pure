@@ -1,6 +1,4 @@
 // import constants from "./constants.js";
-
-
 let constants = {
     sidebar: {
         main: document.querySelector('.sidebar'),
@@ -213,6 +211,50 @@ const stopMusic = () => {
     audioPlay.pause();
 }
 
+const buttonPrevNext = (isNext, index_) => {
+    const list = document.querySelectorAll('.list-music table tbody .footer__left--item');
+    const listPlay = document.querySelectorAll('.list-music table tbody .item-music-play');
+    let indexCurrent_ = [...list].findIndex(dt => dt.classList.contains('active'));
+    if (!index_) {
+        if (indexCurrent_ !== -1) {
+            if (isNext) {
+                indexCurrent_ = (indexCurrent_ + 1) >= list.length ? 0 : (indexCurrent_ + 1);
+            }
+            else {
+                indexCurrent_ = indexCurrent_ = (indexCurrent_ - 1) < 0 ? list.length - 1 : (indexCurrent_ - 1);
+            }
+        }
+    }
+    else {
+        if (!indexLoop) {
+            if (randomLoop) {
+                indexCurrent_ = Math.floor(Math.random() * ((list.length - 1) - 0 + 1) + 0);
+            }
+            else {
+                indexCurrent_ = (indexCurrent_ + 1) >= list.length ? 0 : (indexCurrent_ + 1);
+                console.log(indexCurrent_);
+            }
+        }
+
+    }
+    [...list].forEach(el => {
+        el.classList.remove('active');
+        el.parentElement.parentElement.classList.remove('active');
+    });
+    [...listPlay].forEach(el_ => {
+        el_.classList.add('bx-play', 'text-gray')
+        el_.classList.remove('bx-pause', 'text-main');
+    });
+    if (list[indexCurrent_]) {
+        listPlay[indexCurrent_].classList.remove('bx-play', 'text-gray')
+        listPlay[indexCurrent_].classList.add('bx-pause', 'text-main')
+        list[indexCurrent_].classList.add('active');
+        list[indexCurrent_].parentElement.parentElement.classList.add('active');
+        const data = JSON.parse(list[indexCurrent_].getAttribute('data-item'));
+        playMusic(data);
+    }
+}
+
 const addEventPageHome = () => {
 
     //
@@ -234,50 +276,6 @@ const addEventPageHome = () => {
         playMusic();
     });
     //
-
-    const buttonPrevNext = (isNext, index_) => {
-        const list = document.querySelectorAll('.list-music table tbody .footer__left--item');
-        const listPlay = document.querySelectorAll('.list-music table tbody .item-music-play');
-        let indexCurrent_ = [...list].findIndex(dt => dt.classList.contains('active'));
-        if (!index_) {
-            if (indexCurrent_ !== -1) {
-                if (isNext) {
-                    indexCurrent_ = (indexCurrent_ + 1) >= list.length ? 0 : (indexCurrent_ + 1);
-                }
-                else {
-                    indexCurrent_ = indexCurrent_ = (indexCurrent_ - 1) < 0 ? list.length - 1 : (indexCurrent_ - 1);
-                }
-            }
-        }
-        else {
-            if (!indexLoop) {
-                if (randomLoop) {
-                    indexCurrent_ = Math.floor(Math.random() * ((list.length - 1) - 0 + 1) + 0);
-                }
-                else {
-                    indexCurrent_ = (indexCurrent_ + 1) >= list.length ? 0 : (indexCurrent_ + 1);
-                    console.log(indexCurrent_);
-                }
-            }
-
-        }
-        [...list].forEach(el => {
-            el.classList.remove('active');
-            el.parentElement.parentElement.classList.remove('active');
-        });
-        [...listPlay].forEach(el_ => {
-            el_.classList.add('bx-play', 'text-gray')
-            el_.classList.remove('bx-pause', 'text-main');
-        });
-        if (list[indexCurrent_]) {
-            listPlay[indexCurrent_].classList.remove('bx-play', 'text-gray')
-            listPlay[indexCurrent_].classList.add('bx-pause', 'text-main')
-            list[indexCurrent_].classList.add('active');
-            list[indexCurrent_].parentElement.parentElement.classList.add('active');
-            const data = JSON.parse(list[indexCurrent_].getAttribute('data-item'));
-            playMusic(data);
-        }
-    }
 
     //
     constants.audio.buttonLeft && constants.audio.buttonLeft.addEventListener('click', function () {
@@ -376,16 +374,37 @@ const sidebarEvent = () => {
             });
         });
         timeOut = setTimeout(async () => {
+            // fetch host real
+            // let href = window.location.href;
+            // href = (href.replace("http://", "").replace("https://", "").replace("/app.html", "")
+            //     .replace("/mp3-webapp-pure", "").replace("#", "").replace(window.location.host, ""));
+            // constants.container.classList.remove('active');
+            // [...constants.catelog].forEach(el_ => el_.classList.remove('active'));
+            // const index_ = [...constants.catelog].findIndex(dt => dt.getAttribute("data-path") === href);
+            // index_ !== -1 && constants.catelog[index_].classList.add('active');
+            // clearTimeout(timeOut);
+            // await fetch(`https://${window.location.host}/mp3-webapp-pure/components/${href === "" ? 'home' : href}.html`)
+            //     .then(res => res.text())
+            //     .then(res => {
+            //         constants.container.innerHTML = res;
+            //         reset();
+            //         fetchApiCatelog(href);
+            //         constants.loadingContent && constants.loadingContent.classList.add('hidden')
+            //         constants.container.classList.add('active')
+            //     })
+
+            // clearTimeout(timeOut);
+            // fetch host real
+
             let href = window.location.href;
-            href = (href.replace("http://", "").replace("https://", "").replace("/app.html", "")
-                .replace("/mp3-webapp-pure", "").replace("#", "").replace(window.location.host, ""));
+            href = (href.replace("http://", "").replace("/app.html", "")
+                .replace("#", "").replace(window.location.host, ""));
             constants.container.classList.remove('active');
             [...constants.catelog].forEach(el_ => el_.classList.remove('active'));
             const index_ = [...constants.catelog].findIndex(dt => dt.getAttribute("data-path") === href);
             index_ !== -1 && constants.catelog[index_].classList.add('active');
             clearTimeout(timeOut);
-            console.log(href);
-            await fetch(`https://${window.location.host}/mp3-webapp-pure/components/${href === "" ? 'home' : href}.html`)
+            await fetch(`http://${window.location.host}/components/${href === "" ? 'home' : href}.html`)
                 .then(res => res.text())
                 .then(res => {
                     constants.container.innerHTML = res;
@@ -396,7 +415,7 @@ const sidebarEvent = () => {
                 })
 
             clearTimeout(timeOut);
-        }, 2000);
+        }, 1000);
     })()
 }
 //
